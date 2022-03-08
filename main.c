@@ -73,6 +73,14 @@ int main()
 			(void)sendchar((int)a[1]);
 			int step_count = (int)a[0] + ((int)a[1] << 4);
 			int dir = a[2] & 0x1;
+			LPC_GPIO0->DATA |= (1<<9); //en = 1
+			for (i = 0; i < 0x0008FFF; i++) {}
+			if (dir == 1) {
+				LPC_GPIO0->DATA |= (1<<8);
+			} else {
+				LPC_GPIO0->DATA &= ~(1<<8);
+			}
+			for (i = 0; i < 0x0008FFF; i++) {}
 			for (j = 0 ; j < step_count; j++) {
 				ledOff();
 				//printf("Led Off, Iteration %d\n\r", j);
