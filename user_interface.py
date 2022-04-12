@@ -36,7 +36,9 @@ def button_press():
     byte_data = step_num.to_bytes(4,'little')
     ser.write(byte_data)
     s = ser.read(2)
-    print(s)
+    #print(s)
+    if dir == 1:
+        step_num -= (1<<16)
     label["text"] = step_num
 
 def button2_press():
