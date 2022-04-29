@@ -84,11 +84,13 @@ int main()
 			for (j = 0 ; j < step_count; j++) {
 				ledOff();
 				//printf("Led Off, Iteration %d\n\r", j);
+				//for (i = 0; i < 0x000FFFFF; i++)
 				for (i = 0; i < 0x00000FFF; i++)
 				{
 				}
 				ledOn();
 				//printf("Led On, Iteration %d\n\r", j);
+				//for (i = 0; i < 0x00000FFF; i++)
 				for (i = 0; i < 0x00000FFF; i++)
 				{
 				}
