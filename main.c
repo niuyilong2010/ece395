@@ -107,8 +107,8 @@ int main()
 			a[5] = getkey();
 			a[6] = getkey();
 			a[7] = getkey();
-			int top_step_count = (int)a[0] + ((int)a[1] << 4);
-			int bot_step_count = (int)a[4] + ((int)a[5] << 4);
+			int top_step_count = (int)a[0] + ((int)a[1] << 8);
+			int bot_step_count = (int)a[4] + ((int)a[5] << 8);
 			int top_dir = a[2] & 0x1;
 			int bot_dir = a[6] & 0x1;
 			LPC_GPIO0->DATA |= (1<<9); //en = 1
